@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: location
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: location
+  template:
+    metadata:
+      labels:
+        name: location
+    spec:
+      containers:
+      - name: location
+        image: chakrar27/locationservice:demo
+        ports:
+        - name: location-port
+          containerPort: 9000

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: location-service
+spec:
+  ports:
+  - port: 32157
+    nodePort: 32157
+    targetPort: location-port
+    protocol: TCP
+  selector:
+    name: location
+  type: NodePort
